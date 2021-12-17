@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table catalog="euskalmet" name="datos">
+		<column name="Fecha"></column>
+		<column name="SO2"></column>
+		<column name="ICAEstacion"></column>
+		<column name="Hora"></column>
+		<column name="idestacion"></column>
+		<column name="PM25"></column>
+		<column name="NOgm3"></column>
+		<column name="PM10"></column>
+		<column name="PM10ICA"></column>
+		<column name="NOXgm3"></column>
+		<column name="PM25ICA"></column>
+		<column name="SO2ICA"></column>
+		<column name="NO2"></column>
+		<column name="NO2ICA"></column>
+		<column name="CO8hmgm3"></column>
+		<column name="COmgm3"></column>
+	</table>
+	<table catalog="euskalmet" name="estaciones">
+		<column name="id"></column>
+		<column name="CoordY"></column>
+		<column name="Latitud"></column>
+		<column name="Provincia"></column>
+		<column name="IdPueblo"></column>
+		<column name="Direcion"></column>
+		<column name="Pueblo"></column>
+		<column name="CoordX"></column>
+		<column name="Nombre"></column>
+		<column name="Longitud"></column>
+	</table>
+	<table catalog="euskalmet" name="favoritos">
+		<column name="Id"></column>
+		<column name="Usuario"></column>
+		<column name="NombreLugar"></column>
+	</table>
+	<table catalog="euskalmet" name="galeria">
+		<column name="Id"></column>
+		<column name="Foto"></column>
+		<column name="Usuario"></column>
+	</table>
+	<table catalog="euskalmet" name="lugares">
+		<column name="id"></column>
+		<column name="Territorio"></column>
+		<column name="Descripcion"></column>
+		<column name="Marks"></column>
+		<column name="Tipo"></column>
+		<column name="Municipio"></column>
+		<column name="Nombre"></column>
+	</table>
+	<table catalog="euskalmet" name="lugarpueblo">
+		<column name="idlugar"></column>
+		<column name="idpueblo"></column>
+		<column name="idlugar"></column>
+		<column name="idpueblo"></column>
+	</table>
+	<table catalog="euskalmet" name="pueblos">
+		<column name="id"></column>
+		<column name="Territorio"></column>
+		<column name="Marks"></column>
+		<column name="Municipio"></column>
+		<column name="Descripcion"></column>
+		<column name="Nombre"></column>
+	</table>
+	<table catalog="euskalmet" name="usuarios">
+		<column name="Usuario"></column>
+		<column name="Contraseña"></column>
+	</table>
+</hibernate-reverse-engineering>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 17 dic 2021 9:57:51 by Hibernate Tools 5.5.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="euskalmet" dynamic-insert="false" dynamic-update="false" mutable="true" name="mapping.Favoritos" optimistic-lock="none" polymorphism="implicit" select-before-update="false" table="favoritos">
+        <id name="id" type="java.lang.Integer">
+            <column name="Id"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="mapping.Usuarios" embed-xml="true" fetch="select" insert="true" name="usuarios" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="20" name="Usuario" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombreLugar" optimistic-lock="true" type="string" unique="false">
+            <column length="40" name="NombreLugar" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="lugareses" optimistic-lock="true" sort="unsorted" table="lugares">
+            <key on-delete="noaction">
+                <column length="20" name="Nombre" not-null="true"/>
+            </key>
+            <one-to-many class="mapping.Lugares" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
