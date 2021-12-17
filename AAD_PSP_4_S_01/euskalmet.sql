@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-12-2021 a las 09:20:49
+-- Tiempo de generación: 17-12-2021 a las 10:43:17
 -- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Versión de PHP: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -139,7 +139,7 @@ CREATE TABLE `pueblos` (
 
 CREATE TABLE `usuarios` (
   `Usuario` varchar(20) NOT NULL,
-  `Contraseña` varchar(20) NOT NULL
+  `Contrasenia` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

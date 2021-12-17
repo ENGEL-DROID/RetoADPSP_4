@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 17 dic 2021 9:57:51 by Hibernate Tools 5.5.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 dic 2021 10:41:17 by Hibernate Tools 5.5.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="euskalmet" dynamic-insert="false" dynamic-update="false" mutable="true" name="mapping.Usuarios" optimistic-lock="none" polymorphism="implicit" select-before-update="false" table="usuarios">
         <id name="usuario" type="string">
             <column length="20" name="Usuario"/>
             <generator class="assigned"/>
         </id>
-        <property generated="never" lazy="false" name="contraseña" optimistic-lock="true" type="string" unique="false">
-            <column length="20" name="Contraseña" not-null="true"/>
+        <property generated="never" lazy="false" name="contrasenia" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="Contrasenia" not-null="true"/>
         </property>
         <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="favoritoses" optimistic-lock="true" sort="unsorted" table="favoritos">
             <key on-delete="noaction">

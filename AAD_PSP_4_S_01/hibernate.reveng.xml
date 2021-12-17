@@ -69,4 +69,8 @@
 		<column name="Usuario"></column>
 		<column name="Contraseña"></column>
 	</table>
+	<table catalog="euskalmet" name="prueba">
+		<column name="nombre"></column>
+		<column name="lugar"></column>
+	</table>
 </hibernate-reverse-engineering>

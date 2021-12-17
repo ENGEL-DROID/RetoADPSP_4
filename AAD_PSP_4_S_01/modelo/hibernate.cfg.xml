@@ -15,6 +15,7 @@
         <mapping resource="mapping/Estaciones.hbm.xml"/>
         <mapping resource="mapping/Lugares.hbm.xml"/>
         <mapping resource="mapping/Galeria.hbm.xml"/>
+        <mapping resource="mapping/Prueba.hbm.xml"/>
         <mapping resource="mapping/Favoritos.hbm.xml"/>
         <mapping resource="mapping/Pueblos.hbm.xml"/>
     </session-factory>
