@@ -1,5 +1,5 @@
 package mapping;
-// Generated 17 dic 2021 10:41:17 by Hibernate Tools 5.5.7.Final
+// Generated 20 dic 2021 20:57:13 by Hibernate Tools 5.5.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,7 +15,6 @@ public class Pueblos implements java.io.Serializable {
 	private String marks;
 	private String municipio;
 	private String territorio;
-	private Set estacioneses = new HashSet(0);
 	private Set lugareses = new HashSet(0);
 
 	public Pueblos() {
@@ -30,13 +29,12 @@ public class Pueblos implements java.io.Serializable {
 	}
 
 	public Pueblos(String nombre, String descripcion, String marks, String municipio, String territorio,
-			Set estacioneses, Set lugareses) {
+			Set lugareses) {
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.marks = marks;
 		this.municipio = municipio;
 		this.territorio = territorio;
-		this.estacioneses = estacioneses;
 		this.lugareses = lugareses;
 	}
 
@@ -86,14 +84,6 @@ public class Pueblos implements java.io.Serializable {
 
 	public void setTerritorio(String territorio) {
 		this.territorio = territorio;
-	}
-
-	public Set getEstacioneses() {
-		return this.estacioneses;
-	}
-
-	public void setEstacioneses(Set estacioneses) {
-		this.estacioneses = estacioneses;
 	}
 
 	public Set getLugareses() {

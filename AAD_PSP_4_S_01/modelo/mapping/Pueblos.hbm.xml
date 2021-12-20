@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 17 dic 2021 10:41:17 by Hibernate Tools 5.5.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 dic 2021 20:57:14 by Hibernate Tools 5.5.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="euskalmet" dynamic-insert="false" dynamic-update="false" mutable="true" name="mapping.Pueblos" optimistic-lock="none" polymorphism="implicit" select-before-update="false" table="pueblos">
         <id name="id" type="java.lang.Integer">
@@ -21,12 +21,6 @@
         <property generated="never" lazy="false" name="territorio" optimistic-lock="true" type="string" unique="false">
             <column length="20" name="Territorio" not-null="true"/>
         </property>
-        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="estacioneses" optimistic-lock="true" sort="unsorted" table="estaciones">
-            <key on-delete="noaction">
-                <column name="IdPueblo" not-null="true"/>
-            </key>
-            <one-to-many class="mapping.Estaciones" embed-xml="true" not-found="exception"/>
-        </set>
         <set embed-xml="true" fetch="select" inverse="false" lazy="true" mutable="true" name="lugareses" optimistic-lock="true" sort="unsorted" table="lugarpueblo">
             <key on-delete="noaction">
                 <column name="idpueblo" not-null="true"/>

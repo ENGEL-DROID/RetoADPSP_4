@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-12-2021 a las 10:43:17
+-- Tiempo de generación: 20-12-2021 a las 21:04:50
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.26
 
@@ -31,15 +31,11 @@ CREATE TABLE `datos` (
   `Fecha` date NOT NULL,
   `Hora` time NOT NULL,
   `COmgm3` float NOT NULL,
-  `CO8hmgm3` float NOT NULL,
   `NOgm3` int(11) NOT NULL,
   `NO2` int(11) NOT NULL,
   `NO2ICA` varchar(30) NOT NULL,
-  `NOXgm3` int(11) NOT NULL,
   `PM10` float NOT NULL,
-  `PM10ICA` varchar(30) NOT NULL,
   `PM25` float NOT NULL,
-  `PM25ICA` varchar(30) NOT NULL,
   `SO2` int(11) NOT NULL,
   `SO2ICA` varchar(30) NOT NULL,
   `ICAEstacion` varchar(30) NOT NULL,
@@ -56,7 +52,6 @@ CREATE TABLE `estaciones` (
   `id` int(11) NOT NULL,
   `Nombre` varchar(20) NOT NULL,
   `Provincia` varchar(20) NOT NULL,
-  `Pueblo` varchar(20) NOT NULL,
   `Direcion` varchar(20) NOT NULL,
   `CoordX` float NOT NULL,
   `CoordY` float NOT NULL,
@@ -74,7 +69,8 @@ CREATE TABLE `estaciones` (
 CREATE TABLE `favoritos` (
   `Id` int(11) NOT NULL,
   `Usuario` varchar(20) NOT NULL,
-  `NombreLugar` varchar(40) NOT NULL
+  `IdPueblo` int(11) DEFAULT NULL,
+  `IdLugar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -97,7 +93,7 @@ CREATE TABLE `galeria` (
 
 CREATE TABLE `lugares` (
   `id` int(11) NOT NULL,
-  `Nombre` varchar(20) NOT NULL,
+  `Nombre` varchar(40) NOT NULL,
   `Descripcion` varchar(100) NOT NULL,
   `Tipo` varchar(20) NOT NULL,
   `Marks` varchar(20) NOT NULL,
@@ -158,7 +154,6 @@ ALTER TABLE `datos`
 --
 ALTER TABLE `estaciones`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Pueblo` (`Pueblo`),
   ADD KEY `IdPueblo` (`IdPueblo`);
 
 --
@@ -166,8 +161,7 @@ ALTER TABLE `estaciones`
 --
 ALTER TABLE `favoritos`
   ADD PRIMARY KEY (`Id`),
-  ADD KEY `Usuario` (`Usuario`),
-  ADD KEY `NombreLugar` (`NombreLugar`);
+  ADD KEY `Usuario` (`Usuario`);
 
 --
 -- Indices de la tabla `galeria`
@@ -214,65 +208,41 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `estaciones`
 --
 ALTER TABLE `estaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `galeria`
 --
 ALTER TABLE `galeria`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `lugares`
 --
 ALTER TABLE `lugares`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `pueblos`
 --
 ALTER TABLE `pueblos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `datos`
---
-ALTER TABLE `datos`
-  ADD CONSTRAINT `datos_ibfk_1` FOREIGN KEY (`idestacion`) REFERENCES `estaciones` (`id`);
-
---
--- Filtros para la tabla `estaciones`
---
-ALTER TABLE `estaciones`
-  ADD CONSTRAINT `estaciones_ibfk_1` FOREIGN KEY (`IdPueblo`) REFERENCES `pueblos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `favoritos`
---
-ALTER TABLE `favoritos`
-  ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuarios` (`Usuario`);
-
---
 -- Filtros para la tabla `galeria`
 --
 ALTER TABLE `galeria`
   ADD CONSTRAINT `galeria_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuarios` (`Usuario`);
-
---
--- Filtros para la tabla `lugares`
---
-ALTER TABLE `lugares`
-  ADD CONSTRAINT `lugares_ibfk_1` FOREIGN KEY (`Nombre`) REFERENCES `favoritos` (`NombreLugar`);
 
 --
 -- Filtros para la tabla `lugarpueblo`

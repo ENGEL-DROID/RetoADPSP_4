@@ -1,5 +1,5 @@
 package mapping;
-// Generated 17 dic 2021 10:41:17 by Hibernate Tools 5.5.7.Final
+// Generated 20 dic 2021 20:57:13 by Hibernate Tools 5.5.7.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,7 +10,7 @@ import java.util.Set;
 public class Lugares implements java.io.Serializable {
 
 	private Integer id;
-	private Favoritos favoritos;
+	private String nombre;
 	private String descripcion;
 	private String tipo;
 	private String marks;
@@ -21,9 +21,8 @@ public class Lugares implements java.io.Serializable {
 	public Lugares() {
 	}
 
-	public Lugares(Favoritos favoritos, String descripcion, String tipo, String marks, String municipio,
-			String territorio) {
-		this.favoritos = favoritos;
+	public Lugares(String nombre, String descripcion, String tipo, String marks, String municipio, String territorio) {
+		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.tipo = tipo;
 		this.marks = marks;
@@ -31,9 +30,9 @@ public class Lugares implements java.io.Serializable {
 		this.territorio = territorio;
 	}
 
-	public Lugares(Favoritos favoritos, String descripcion, String tipo, String marks, String municipio,
-			String territorio, Set puebloses) {
-		this.favoritos = favoritos;
+	public Lugares(String nombre, String descripcion, String tipo, String marks, String municipio, String territorio,
+			Set puebloses) {
+		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.tipo = tipo;
 		this.marks = marks;
@@ -50,12 +49,12 @@ public class Lugares implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Favoritos getFavoritos() {
-		return this.favoritos;
+	public String getNombre() {
+		return this.nombre;
 	}
 
-	public void setFavoritos(Favoritos favoritos) {
-		this.favoritos = favoritos;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getDescripcion() {

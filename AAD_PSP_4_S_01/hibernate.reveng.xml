@@ -2,7 +2,8 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-	<table catalog="euskalmet" name="datos">
+
+<table catalog="euskalmet" name="datos">
 		<column name="Fecha"></column>
 		<column name="SO2"></column>
 		<column name="ICAEstacion"></column>
@@ -68,9 +69,5 @@
 	<table catalog="euskalmet" name="usuarios">
 		<column name="Usuario"></column>
 		<column name="Contraseña"></column>
-	</table>
-	<table catalog="euskalmet" name="prueba">
-		<column name="nombre"></column>
-		<column name="lugar"></column>
 	</table>
 </hibernate-reverse-engineering>
