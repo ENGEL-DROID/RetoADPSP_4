@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Reto2Moviles</string>
+    <string name="title_activity_mapa">Mapa</string>
+    <string name="Contra">Contraseña</string>
+    <string name="Usu">Usuario</string>
+    <string name="registrar">Registrar</string>
+</resources>
